@@ -12,11 +12,11 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    private int id;
 
-    int index;
-    String firstName;
-    String lastName;
-    String major;
-    String semester;
+    private int index;
+    private String firstName;
+    private String lastName;
+    private String major;
+    private String semester;
 }

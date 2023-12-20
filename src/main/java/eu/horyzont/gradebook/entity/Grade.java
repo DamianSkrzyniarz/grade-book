@@ -9,11 +9,11 @@ public class Grade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    private int id;
 
-    String value;
+    private String value;
     @ManyToOne
-    Student student;
+    private Student student;
     @ManyToOne
-    Course course;
+    private Course course;
 }

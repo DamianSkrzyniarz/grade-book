@@ -13,8 +13,8 @@ public class Teacher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    private int id;
 
-    String firstName;
-    String lastName;
+    private String firstName;
+    private String lastName;
 }

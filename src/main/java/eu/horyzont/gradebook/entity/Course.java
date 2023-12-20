@@ -9,9 +9,9 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    private int id;
 
-    String name;
+    private String name;
     @ManyToOne
-    Teacher teacher;
+    private Teacher teacher;
 }
