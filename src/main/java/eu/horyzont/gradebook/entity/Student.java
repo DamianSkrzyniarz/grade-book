@@ -1,10 +1,9 @@
 package eu.horyzont.gradebook.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -19,4 +18,8 @@ public class Student {
     private String lastName;
     private String major;
     private String semester;
+    @OneToMany(mappedBy = "student")
+    private List<Grade> grades;
+    @ManyToMany(mappedBy = "students")
+    private List<Course> courses;
 }
