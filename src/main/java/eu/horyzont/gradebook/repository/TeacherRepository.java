@@ -11,8 +11,6 @@ import java.util.List;
 @Repository
 public interface TeacherRepository extends JpaRepository<Teacher, Integer> {
 
-    public Teacher
-    findByIndex(int index);
 
     List<Teacher> findByFirstNameOrLastNameContainingIgnoreCase(String firstName, String lastName);
 }

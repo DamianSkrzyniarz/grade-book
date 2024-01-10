@@ -26,9 +26,5 @@ public class TeacherController {
         return repository.findById(id).get();
     }
 
-    @GetMapping("/teachers/index/{index}")
-    public Teacher teacherByIndex(@PathVariable int index) { return repository.findByIndex(index);
-    }
-
 
 }

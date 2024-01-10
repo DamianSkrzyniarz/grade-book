@@ -18,8 +18,4 @@ public class Student {
     private String lastName;
     private String major;
     private String semester;
-    @OneToMany(mappedBy = "student")
-    private List<Grade> grades;
-    @ManyToMany(mappedBy = "students")
-    private List<Course> courses;
 }
