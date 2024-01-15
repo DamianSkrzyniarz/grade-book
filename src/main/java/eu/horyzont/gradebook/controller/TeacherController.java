@@ -25,6 +25,4 @@ public class TeacherController {
     public Teacher teacherById(@PathVariable int id){
         return repository.findById(id).get();
     }
-
-
 }
