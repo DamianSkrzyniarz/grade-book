@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173", maxAge = 3600)
 @RestController
 public class StudentController {
 
@@ -17,6 +18,7 @@ public class StudentController {
     public List<Student> all(){
         return repository.findAll();
     }
+
     @GetMapping("/students/id/{id}")
     public Student studentById(@PathVariable int id){
         return repository.findById(id).get();
@@ -31,6 +33,7 @@ public class StudentController {
     public List<Student> studentsByMajor(@PathVariable String major){
         return repository.findAllByMajor(major);
     }
+
     @GetMapping("/students/semester/{semester}")
     public List<Student> studentsBySemester(@PathVariable String semester){
         return repository.findAllByMajor(semester);
