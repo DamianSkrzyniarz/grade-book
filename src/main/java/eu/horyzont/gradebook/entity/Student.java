@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
-import java.util.List;
-
 @Data
 @Entity
 public class Student {
@@ -13,7 +11,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @NotBlank
+    @Column(unique = true)
     private int index;
     @NotBlank
     private String firstName;
@@ -23,4 +21,6 @@ public class Student {
     private String major;
     @NotBlank
     private String semester;
+    @OneToOne
+    private User account;
 }

@@ -43,6 +43,5 @@ public class StudentController {
     public List<Student> searchStudents(@PathVariable String phrase){
         return repository.findByFirstNameOrLastNameContainingIgnoreCase(phrase, phrase);
     }
-    
 
 }
