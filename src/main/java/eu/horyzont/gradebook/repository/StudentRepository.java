@@ -8,7 +8,9 @@ import java.util.List;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer> {
-    public Student findByIndex(int index);
+    Student findByIndex(int index);
+
+    Student findByAccountEmail(String email);
 
     List<Student> findAllByMajor(String major);
 

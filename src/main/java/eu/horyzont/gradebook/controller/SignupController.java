@@ -17,9 +17,14 @@ public class SignupController {
     @Autowired
     private SignupRepository repository;
 
-    @GetMapping("/signups/student/{studentId}")
-    public List<Signup> getSignupsByStudent(@PathVariable int studentId){
+    @GetMapping("/signups/student/email/{email}")
+    public List<Signup> getSignupsByStudentEmail(@PathVariable String email){
 
-        return repository.findByStudentId(studentId);
+        return repository.findByStudentAccountEmail(email);
+    }
+    @GetMapping("/signups/student/id/{id}")
+    public List<Signup> getSignupsByStudentId(@PathVariable int id){
+
+        return repository.findByStudentId(id);
     }
 }

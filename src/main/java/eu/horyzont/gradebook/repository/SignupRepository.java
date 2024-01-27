@@ -10,5 +10,6 @@ import java.util.List;
 
 @Repository
 public interface SignupRepository extends JpaRepository<Signup, Integer>{
-    public List<Signup> findByStudentId(int studentId);
+    public List<Signup> findByStudentAccountEmail(String email);
+    public List<Signup> findByStudentId(int id);
 }
