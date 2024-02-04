@@ -18,11 +18,9 @@ public class Course {
     private String name;
     @NotBlank
     private String type;
-    @NotBlank
     private int ects;
     @ManyToOne
     private Teacher teacher;
-    @NotBlank
     private int hours;
     private String description;
 }

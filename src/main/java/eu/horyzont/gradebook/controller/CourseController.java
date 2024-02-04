@@ -3,9 +3,7 @@ package eu.horyzont.gradebook.controller;
 import eu.horyzont.gradebook.entity.Course;
 import eu.horyzont.gradebook.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +16,21 @@ public class CourseController {
     @GetMapping("/courses/all")
     public List<Course> all() {
         return repository.findAll();
+    }
+
+    @GetMapping("/courses/teacher/{email}")
+    public List<Course> getCoursesByTeacherEmail(@PathVariable String email) {
+        return repository.findByTeacherAccountEmail(email);
+    }
+
+    @GetMapping("/courses/{id}")
+    public Course findById(@PathVariable int id) {
+        System.out.println(id);
+        return repository.findById(id).get();
+    }
+
+    @PostMapping("/courses/new")
+    public Course createCourse(@RequestBody Course course){
+        return repository.save(course);
     }
 }

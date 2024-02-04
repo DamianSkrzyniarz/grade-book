@@ -27,4 +27,10 @@ public class SignupController {
 
         return repository.findByStudentId(id);
     }
+
+    @GetMapping("/signups/course/{id}")
+    public List<Signup> getSignupsByCourseId(@PathVariable int id){
+
+        return repository.findByCourseId(id);
+    }
 }
